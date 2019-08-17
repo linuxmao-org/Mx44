@@ -1,0 +1,163 @@
+# Set GtkSettings color scheme property.
+# This can be overriden (via an xsetting) with eg. the gnome-appearance-properties.
+gtk_color_scheme = "fg_color:#000\nbg_color:#EFF3F7\nbase_color:#fff\ntext_color:#000\nselected_bg_color:#7BAAE7\nselected_fg_color:#fff\ntooltip_fg_color:#000\ntooltip_bg_color:#FFFF94"
+
+style "ia_ora-default-mx"
+{
+font_name = "Sans 10"
+
+    color["gray0"]= @bg_color # "#EFF3F7"
+    color["gray1"]= mix(0.4,@bg_color, "#C8D8D8") #"#DFE7EF"
+    color["gray2"]= mix(0.4,@bg_color, "#A8B8B8") #"#CFD7DF"
+    color["gray3"]= mix(0.4,@bg_color, "#90B0B8") # "#C7D3DF"
+    color["gray4"]= mix(0.4,@bg_color, "#709098") # "#B6C3CF"
+    color["gray5"]= mix(0.4,@bg_color, "#507088") # "#A6B2C7"
+    color["gray6"]= mix(0.4,@bg_color, "#183050") #"#8692A6"
+
+# one
+    color["blue0"] = mix(0.3, @selected_bg_color, "#E8F8FF") # "#cee3ff"
+    color["blue1"] = mix(0.3, @selected_bg_color, "#C0DAFF") # "#adcfff"
+    color["blue2"] = @selected_bg_color # "#7BAAE7"
+    color["blue3"] = mix(0.5, @selected_bg_color, "#396AC5" ) # "#5A8AD6"
+    color["blue4"] = mix(0.5, @selected_bg_color, "#0C50a0") # "#427dc6"
+
+    GtkButton::default-border         = {0, 0, 0, 0}
+    GtkWidget::interior-focus         = 1
+    GtkButton::default-spacing        = 5
+    GtkRadioButton::indicator-size    = 9
+    GtkCheckButton::indicator-size    = 9
+    GtkCheckButton::indicator-spacing    = 0
+    GtkPaned::handle-size             = 6
+    GtkRange::trough-border           = 0
+    GtkRange::slider-width            = 10
+    GtkRange::stepper-size            = 5
+    GtkRange::stepper-spacing         = 6
+    GtkRange::trough-side-details     = 11
+    GtkScale::slider-length           = 14
+    GtkScrollbar::min-slider-length   = 20
+    GtkScrollbar::slider-width        = 15
+    GtkScrollbar::trough-side-details     = 0
+    GtkTreeView::even-row-color       = @base_color
+    GtkTreeView::odd-row-color        = @bg_color
+
+    # Glow the tasklist by changing the color, instead of overlaying it with a rectangle
+    WnckTasklist   ::fade-overlay-rect    = 0
+
+
+    fg[NORMAL]        = @fg_color
+    fg[ACTIVE]        = @fg_color
+    fg[INSENSITIVE]   = @gray4
+    fg[PRELIGHT]      = @fg_color
+    fg[SELECTED]      = @selected_fg_color
+
+    bg[NORMAL]        = @bg_color
+    bg[ACTIVE]        = @gray1
+    bg[INSENSITIVE]   = @gray2
+    bg[PRELIGHT]      = @gray1
+    bg[SELECTED]      = @selected_bg_color
+
+    base[NORMAL]      = @base_color
+    base[ACTIVE]      = @blue1
+    base[INSENSITIVE] = @bg_color
+    base[PRELIGHT]    = @base_color
+    base[SELECTED]    = @selected_bg_color
+
+    text[NORMAL]      = @text_color
+    text[ACTIVE]      = @selected_fg_color
+    text[INSENSITIVE] = @gray4
+    text[PRELIGHT]    = @fg_color
+    text[SELECTED]    = @selected_fg_color
+
+    engine "ia_ora" {
+       black_check=TRUE
+    }
+}
+
+style "ia_ora-button-mx" = "ia_ora-default-mx"
+{
+  xthickness = 0
+  ythickness = 0
+}
+
+style "ia_ora-thin-mx" = "ia_ora-default-mx"
+{
+  xthickness = 0
+  ythickness = 0
+}
+
+style "ia_ora-treeview-header-mx" = "ia_ora-default-mx"
+{
+  xthickness = 0
+  ythickness = 0
+}
+
+
+style "ia_ora-menu-mx" = "ia_ora-default-mx"
+{
+  fg[PRELIGHT]=@selected_fg_color
+  text[PRELIGHT]=@selected_fg_color
+}
+
+style "ia_ora-bar-mx" = "ia_ora-menu"
+{
+  xthickness = 0
+  ythickness = 0
+}
+
+
+style "ia_ora-tasklist-mx" = "ia_ora-default-mx"
+{
+  xthickness = 2
+  ythickness = 2
+  GtkWidget::focus-line-width = 0
+  GtkWidget::focus-padding = 0
+}
+
+style "ia_ora-comboboxtext-mx" = "ia_ora-default-mx"
+{
+  text[PRELIGHT] = @fg_color
+ # Work around for http://bugzilla.gnome.org/show_bug.cgi?id=382646
+  text[NORMAL]       = @fg_color
+}
+
+style "ia_ora-tooltips-mx" = "ia_ora-default-mx"
+{
+  bg[NORMAL] = mix(0.1,@tooltip_bg_color,"#eeeeee")
+  fg[NORMAL] = mix(0.1,@tooltip_fg_color,"#111111")
+}
+
+style "ia_ora-tree-mx" = "ia_ora-default-mx"
+{
+  bg[ACTIVE] = @blue1
+}
+
+class "GtkWidget" style "ia_ora-default-mx"
+class "ECanvas" style "ia_ora-thin-mx"
+class "GtkButton" style "ia_ora-button-mx"
+class "EComboButton" style "ia_ora-thin-mx"
+widget_class "*Item.GtkAccelLabel" style "ia_ora-menu-mx"
+widget_class "*GtkComboBox.GtkCellView" style "ia_ora-comboboxtext-mx"
+widget_class "*BaconCdSelection.GtkCellView" style "ia_ora-comboboxtext-mx"
+widget_class "*NautilusBurnDriveSelection.GtkCellView" style "ia_ora-comboboxtext-mx"
+widget_class "*Gimp*Combo*.GtkCellView" style "ia_ora-comboboxtext-mx"
+widget_class "*.EShortcutsView.GtkButton" style "ia_ora-thin-mx"
+widget_class "*.GtkHTMLEmbedded.*GtkButton" style "ia_ora-thin-mx"
+
+# Treeview header
+widget_class "*.<GtkTreeView>.<GtkButton>" style "ia_ora-treeview-header-mx"
+widget_class "*.<GtkList>.<GtkButton>" style "ia_ora-treeview-header-mx"
+widget_class "*.<GtkCList>.<GtkButton>" style "ia_ora-treeview-header-mx"
+widget_class "*.<GtkCTree>.<GtkButton>" style "ia_ora-treeview-header-mx"
+widget_class "*<EphyBookmarksEditor>*<GtkButton>" style "ia_ora-treeview-header-mx"
+widget_class "*Notebook.GtkHBox.GtkButton" style "ia_ora-treeview-header-mx"
+
+class "GtkScrolledWindow" style "ia_ora-thin-mx"
+class "GtkProgressBar" style "ia_ora-bar-mx"
+widget_class "*MenuItem*" style "ia_ora-menu-mx"
+widget_class "*.PanelApplet.*" style "ia_ora-tasklist-mx"
+widget "*.tasklist-button" style "ia_ora-tasklist-mx"
+class "GtkNotebook" style "ia_ora-thin-mx"
+widget "gtk-tooltip*" style "ia_ora-tooltips-mx"
+widget_class "*GtkPathBar*" style "ia_ora-thin-mx"
+widget_class "*Tree*" style "ia_ora-tree-mx"
+widget_class "*ETable*" style "ia_ora-tree-mx"
