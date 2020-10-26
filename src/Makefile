@@ -25,7 +25,7 @@ LIBS		= $(GTK_LIBS) $(ALSA_LIBS) $(JACK_LIBS) -lm
 
 FLAGS		= -O3 -Wall -pipe -mmmx -fomit-frame-pointer -D_REENTRANT \
 		   -DDATADIR=\"$(DATADIR)\" \
-		   $(GTK_CFLAGS) $(ALSA_CFLAGS) $(JACK_CFLAGS) 
+		   $(GTK_CFLAGS) $(ALSA_CFLAGS) $(JACK_CFLAGS) $(CFLAGS) 
 
 SRCS            =  interface2.c mx44.c stateio.c cmdline_opts.c main.c
 INCLUDE         =  mx44.h
@@ -36,7 +36,7 @@ OBJS		= $(SRCS:.c=.o)
 
 
 $(TARGET):	$(OBJS)
-	$(CC) -D_REENTRANT -o $@ $(OBJS) $(LIBS)
+	$(CC) -D_REENTRANT $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
 
 .c.o: 
 	$(CC) -c $(FLAGS) $<
