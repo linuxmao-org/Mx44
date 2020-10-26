@@ -23,9 +23,7 @@ JACK_LIBS   = `pkg-config --libs jack`
 
 LIBS		= $(GTK_LIBS) $(ALSA_LIBS) $(JACK_LIBS) -lm 
 
-FLAGS		= -O3 -Wall -pipe -mmmx -fomit-frame-pointer -D_REENTRANT \
-		   -DDATADIR=\"$(DATADIR)\" \
-		   $(GTK_CFLAGS) $(ALSA_CFLAGS) $(JACK_CFLAGS) $(CFLAGS) 
+FLAGS		= -O2 -Wall -DDATADIR=\"$(DATADIR)\" $(GTK_CFLAGS) $(ALSA_CFLAGS) $(JACK_CFLAGS) $(CFLAGS) 
 
 SRCS            =  interface2.c mx44.c stateio.c cmdline_opts.c main.c
 INCLUDE         =  mx44.h
