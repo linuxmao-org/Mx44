@@ -72,6 +72,7 @@ Mx44 no longer automatically connects it's outputs to the system playback ports.
 Implemented GS controllers
 --------------------------
 
+```
 R # Ctrl
 
  73 Attack  (modifies the time value of all env stage 1 and 2)
@@ -91,8 +92,6 @@ R # Ctrl
 *71 Variation  (balance between modulation from op 1+3/op 2+4)
 
 *74 Cutoff Freq (resonance ctrl for oscillators connected to envelope)
-
-
-
+```
 
 Controllers marked with asterix operates in true RT mode (ie: on a sustained note.) The rest is set up at note-on
