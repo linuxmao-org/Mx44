@@ -20,14 +20,14 @@ make
 sudo make install
 ```
 
-should do the trick. The default is to install the binary in /usr/local/bin/ and to install the default patch file in /usr/local/share/Mx44.
+should do the trick. The default is to install the binary in `/usr/local/bin/` and to install the default patch file in `/usr/local/share/Mx44`.
 
 
 
 Commandline options
 -------------------
 
-To see all available command line options use the --help option.
+To see all available command line options use the `--help` option.
 Options are described below.
 
 
@@ -36,36 +36,34 @@ State / Patches
 ---------------
 Mx44 stores its state and patches in a single file automatically.
 
-Mx44 will attempt to read patches from a file called .mx44patch in your home directory. If this fails then it will load the system patches in /usr/local/share/Mx44/mx44patch.
+Mx44 will attempt to read patches from a file called `.mx44patch` in your home directory. If this fails then it will load the system patches in `/usr/local/share/Mx44/mx44patch`.
 
 Mx44 will automatically write patches to .mx44patch in your home directory when it exits.
 
-There are two new command line options to specify the patch to load from and the patch to save to. If you specify a patch to load from, you must also specify the patch to save to. This is
-to avoid unintentionally overwriting ~/.mx44patch.
+There are two new command line options to specify the patch to load from and the patch to save to. If you specify a patch to load from, you must also specify the patch to save to. This is to avoid unintentionally overwriting `~/.mx44patch`.
 
-Although you must specify --save-to when specifying --load-from, you can specify --save-to without specifying --load-from.
+Although you must specify `--save-to` when specifying `--load-from`, you can specify `--save-to` without specifying `--load-from`.
 
 
 
 Voices
 ------
 
-Previously you could specify the number of voices for Mx44 to use by simply adding a number after the command to run mx44. You must now use the --voices= option.
+Previously you could specify the number of voices for Mx44 to use by simply adding a number after the command to run mx44. You must now use the `--voices=` option.
 
 
 
 Console Operation
 -----------------
 
-Mx44 will run quite happily without a graphical user interface. Just supply the --console option on the commandline. Obviously you won't be able to edit the patches in this mode. Mx44 will
-also run in this mode if the DISPLAY environment variable is not defined.
+Mx44 will run quite happily without a graphical user interface. Just supply the `--console` option on the commandline. Obviously you won't be able to edit the patches in this mode. Mx44 will also run in this mode if the `DISPLAY` environment variable is not defined.
 
 
 
 Auto-connecting outputs
 -----------------------
 
-Mx44 no longer automatically connects it's outputs to the system playback ports. To revert to this behaviour simply add --auto-connect as a command line option and it will.
+Mx44 no longer automatically connects it's outputs to the system playback ports. To revert to this behaviour simply add `--auto-connect` as a command line option and it will.
 
 
 
@@ -94,4 +92,4 @@ R # Ctrl
 *74 Cutoff Freq (resonance ctrl for oscillators connected to envelope)
 ```
 
-Controllers marked with asterix operates in true RT mode (ie: on a sustained note.) The rest is set up at note-on
+Controllers marked with asterix operates in true RT mode (ie: on a sustained note.) The rest is set up at note-on.
