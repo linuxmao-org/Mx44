@@ -7,16 +7,18 @@ Kudos to Jens M Andreasen  (its original author), it's been released under a GPL
 Intro
 -----
 
-Mx44 is a multichannel polyphonic synthesizer, loosely based on FM-synthesis, with a Klingon approach to oscillators ...
+Mx44 is a multichannel polyphonic synthesizer, loosely based on FM-synthesis, with a Klingon approach to oscillators...
 
 
 
 Building
 --------
 
+```
 cd src
 make
 sudo make install
+```
 
 should do the trick. The default is to install the binary in /usr/local/bin/ and to install the default patch file in /usr/local/share/Mx44.
 
