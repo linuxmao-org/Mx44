@@ -1,0 +1,69 @@
+.TH Mx44 1 "February 9 2006" "Version 1.0" "Mx44 Manual Page"
+
+.SH NAME
+mx44 - polyphonic, multichannel midi realtime software synthesizer
+
+
+.SH SYNOPSIS
+.B mx44
+[\fIVOICES\fP]
+
+
+.SH DESCRIPTION
+.PP
+The \fIMx44\fP is a polyphonic multichannel midi realtime software 
+synthesizer. It is written in C and hand optimized for the (Intel) MMX 
+instruction set. It runs under Linux, using any kernel modified for 
+realtime performance. The sourcecode is licensed under GPL.
+.PP
+The core algorithm is a  4 x 4 crossmodulating matrix (phase and 
+amplitude) with individual envelopes for each oscillator. Oscillators 
+have individual frequency intonation, can emphasize any of the eight 
+first harmonics and even do some internal crossmodulation. Envelopes can 
+be switched between VCA and VCF modes (ehrm, actually wawe-shaping, but 
+it will quack like a duck by any other name.) The sustainloop of the 
+envelope can be brought into oscillation in the audible spectre as well 
+as provide slow LFO sweeps. There is also a minor load of key and 
+velocity related modifications for wowie zowie realtime ecstacy 
+emulation.
+.PP
+It is very good for esoteric pads and ultra electric leads. I use it all 
+the time together with the Rosegarden sequencer or some of my old Atari 
+toys (like M!). I don't think you can make it sound like a realistic 
+grand piano though, but then again: Somebody out there, please prove me 
+wrong. ;-)
+.PP
+A 166 Mhz Pentium will provide you with 20 simultanious voices, whereas 
+a 400 Mhz Pentium II can with ease provide you with 88 simultanious 
+voices. My current 1.1Ghz Celery occasionally runs 200 voices (800 
+oscillators). That ought to be enough for most people. Write any number 
+after the command to change the 48 voice default.
+
+
+.SH OPTIONS
+.l 
+.TP 8
+.B  \fIVOICES\fP
+Sets the maximum number of voices. Default is 48.
+
+
+.SH FILES
+Mx44's only data file is stored in /usr/share/mx44, and is copied to 
+\fB$HOME\fP/.mx44/ when the user launches the wrapper script. This 
+allows users to make changes to the patches.
+
+
+.SH SUGGESTIONS AND BUG REPORTS
+Any bugs found should be reported to the upstream author and/or package 
+maintainer.
+
+
+.SH OTHER INFO
+The project homepage is at http://hem.passagen.se/ja_linux/.
+
+
+.SH AUTHOR
+Mx44 was written by Jens M Andreasen <dev.null@chello.se>.
+
+This manual page was written by Dana Olson <mx44@ubuntustudio.com>, for 
+the Ubuntu project (but may be used by others).
