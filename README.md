@@ -1,4 +1,4 @@
-**Anté-scriptum:** this is a recovery from the original code from http://web.comhem.se/luna/ which isn't available anymore at the time being (6th April 2021).
+**Anté-scriptum:** this is a recovery from the original code from http://web.comhem.se/luna/ which isn't available anymore at the time being - 6th April 2021 (see [an archive of it](https://web.archive.org/web/20190205234526/http://web.comhem.se/luna/)).
 Kudos to Jens M Andreasen  (its original author), it's been released under a GPLv2+ licence, hence it's available for the community to maintain/develop/fork it under the same terms.
 
 
