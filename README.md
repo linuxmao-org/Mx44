@@ -93,3 +93,6 @@ R # Ctrl
 ```
 
 Controllers marked with asterix operates in true RT mode (ie: on a sustained note.) The rest is set up at note-on.
+
+You can see a demonstration of this synthesizer made by Brian on linuxsynths.com :
+http://linuxsynths.com/Mx44PatchesDemos/mx44.html
