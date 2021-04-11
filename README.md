@@ -94,5 +94,12 @@ R # Ctrl
 
 Controllers marked with asterix operates in true RT mode (ie: on a sustained note.) The rest is set up at note-on.
 
-You can see a demonstration of this synthesizer made by Brian on linuxsynths.com :
-http://linuxsynths.com/Mx44PatchesDemos/mx44.html
+
+
+External docs & démos
+---------------------
+
+- you can see a [demonstration of this synthesizer made by Brian on linuxsynths.com](http://linuxsynths.com/Mx44PatchesDemos/mx44.html)
+- [linuxmao Mx44 page](http://linuxmao.org/mx44) 🇫🇷
+- [linuxaudio Mx44 page](https://wiki.linuxaudio.org/apps/all/mx44)
+- [archived old upstream page](https://web.archive.org/web/20190205234526/http://web.comhem.se/luna/)
